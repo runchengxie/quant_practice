@@ -1,3 +1,3 @@
 # cqf
 
- cqf homework project
+ cqf project
