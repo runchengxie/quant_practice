@@ -7516,7 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Optimal-Portfolio-Allocation-1"><strong>Optimal Portfolio Allocation 1</strong><a class="anchor-link" href="#Optimal-Portfolio-Allocation-1">¶</a></h3><p>An investment universe of the following risky assets with a dependence structure (correlation) applies to all questions below as relevant:</p>
+<h1 id="Optimal-Portfolio-Allocation-1"><strong>Optimal Portfolio Allocation 1</strong><a class="anchor-link" href="#Optimal-Portfolio-Allocation-1">¶</a></h1><p>An investment universe of the following risky assets with a dependence structure (correlation) applies to all questions below as relevant:</p>
 <p>$$
 \begin{array}{cccc}
 \text{Asset} &amp; \mu &amp; \sigma &amp; w \\
@@ -7535,8 +7535,7 @@ R = \begin{pmatrix}
 0.3 &amp; 0.6 &amp; 0.6 &amp; 1
 \end{pmatrix}
 $$</p>
-<p><strong>Question 1.1.</strong> Consider the min variance portfolio with a target return $m$.</p>
-<p>$$ \underset{w}{\text{argmin}} \frac{1}{2}w'\Sigma w \qquad \text{s.t.} \quad w'\mathbf{1}=1 \qquad \mu_{\Pi}=w'\mu=m$$</p>
+<h2 id="Question-1.1.-Consider-the-min-variance-portfolio-with-a-target-return-$m$."><strong>Question 1.1.</strong> Consider the min variance portfolio with a target return $m$.<a class="anchor-link" href="#Question-1.1.-Consider-the-min-variance-portfolio-with-a-target-return-$m$.">¶</a></h2><p>$$ \underset{w}{\text{argmin}} \frac{1}{2}w'\Sigma w \qquad \text{s.t.} \quad w'\mathbf{1}=1 \qquad \mu_{\Pi}=w'\mu=m$$</p>
 </div>
 </div>
 </div>
@@ -7547,8 +7546,8 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Q: Formulate the Lagrangian and give its partial derivatives.</strong></p>
-<p><strong>A:</strong></p>
+<h3 id="Q:-Formulate-the-Lagrangian-and-give-its-partial-derivatives."><strong>Q: Formulate the Lagrangian and give its partial derivatives.</strong><a class="anchor-link" href="#Q:-Formulate-the-Lagrangian-and-give-its-partial-derivatives.">¶</a></h3><br/>
+<hr/>
 <br/>
 <p><strong>Step 1: constructing the Lagrangian equation</strong></p>
 <p>Our goal is to minimize $\frac{1}{2}w'\Sigma w$, with to constraints:</p>
@@ -7564,15 +7563,23 @@ $$</p>
 </li>
 </ul>
 <br/>
+<hr/>
+<br/>
 <p><strong>Step 2: partial derivatives on $w$</strong></p>
 <p>To find the optimal w*, we calculate the partial derivative on $w$</p>
 <p>$$ \frac{\partial \mathcal{L}}{\partial w} = \Sigma w - \lambda 1 - \gamma \mu = 0 $$</p>
 <p>This gives us:</p>
 <p>$$\Sigma w = \lambda 1 + \gamma \mu$$</p>
 <p>Thus, we have a line equation for w</p>
+<br/>
+<hr/>
+<br/>
 <p><strong>Step 3: use $\Sigma^{-1}$ to represent w</strong></p>
 <p>Assuming $\Sigma$ is reversible, we would multiply both side of the above equation with $\Sigma^{-1}$</p>
 <p>$$w = \lambda \Sigma^{-1} 1 + \gamma \Sigma^{-1} \mu$$</p>
+<br/>
+<hr/>
+<br/>
 <p><strong>Step 4: using constrains to deduce $\lambda$ and $\gamma$</strong></p>
 <p>We know that</p>
 <p>(1)$w'1=1$</p>
@@ -7593,6 +7600,9 @@ $$</p>
 <p>$$\lambda (1'\Sigma^{-1} \mu) + \gamma (\mu'\Sigma^{-1} \mu) = m$$</p>
 <p>Thus:</p>
 <p>$$\lambda B + \gamma C = 1 \tag{2}$$</p>
+<br/>
+<hr/>
+<br/>
 <p><strong>Step 5: with equation (1) and (2), we solve for $\lambda$ and $\gamma$</strong></p>
 <p>$$\begin{cases}
 A\lambda + B\gamma = 1, \\
@@ -7600,10 +7610,16 @@ B\lambda + C\gamma = m.
 \end{cases}$$</p>
 <p>Solving the above two equations give us:</p>
 <p>$$\lambda = \frac{C - Bm}{AC - B^2}, \quad \gamma = \frac{Am - B}{AC - B^2}$$</p>
+<br/>
+<hr/>
+<br/>
 <p><strong>Step 6: we deduce the w*</strong></p>
 <p>Substituting the $\lambda$ and $\gamma$ into $w = \lambda \Sigma^{-1} 1 + \gamma \Sigma^{-1} \mu$</p>
 <p>$$w* = \frac{C - Bm}{AC - B^2} \Sigma^{-1} 1 + \frac{Am - B}{AC - B^2} \Sigma^{-1} \mu$$</p>
 <p>Thus, we have solved for the optimal weight w*.</p>
+<br/>
+<hr/>
+<br/>
 <p><strong>Step 7: calculate the risk of the portfolio $\sigma_\Pi$</strong></p>
 <p>Now with w* becomes known, we can calculate the portfolio risk with</p>
 <p>$$\sigma_\Pi = \sqrt{\mathbf{w}^* \mathbf{\Sigma} \mathbf{w}^*}$$</p>
@@ -7617,8 +7633,9 @@ B\lambda + C\gamma = m.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Q: Write down the analytical solution for $w∗$ optimal allocations – no derivation required.</strong></p>
-<p><strong>A:</strong></p>
+<h3 id="Q:-Write-down-the-analytical-solution-for-$w%E2%88%97$-optimal-allocations-%E2%80%93-no-derivation-required."><strong>Q: Write down the analytical solution for $w∗$ optimal allocations – no derivation required.</strong><a class="anchor-link" href="#Q:-Write-down-the-analytical-solution-for-$w%E2%88%97$-optimal-allocations-%E2%80%93-no-derivation-required.">¶</a></h3><br/>
+<hr/>
+<br/>
 <p>$$ w^* = \frac{C - B m}{A C - B^2} \Sigma^{-1} 1 + \frac{A m - B}{A C - B^2} \Sigma^{-1} \mu $$</p>
 </div>
 </div>
@@ -7630,8 +7647,7 @@ B\lambda + C\gamma = m.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Q: Compute allocations $w∗$ and portfolio risk $\sigma_{\Pi} = \sqrt{w'\Sigma w}$ for $m$ = 4.5%.</strong></p>
-<p><strong>A:</strong></p>
+<h3 id="Q:-Compute-allocations-$w%E2%88%97$-and-portfolio-risk-$%5Csigma_%7B%5CPi%7D-=-%5Csqrt%7Bw'%5CSigma-w%7D$-for-$m$-=-4.5%25."><strong>Q: Compute allocations $w∗$ and portfolio risk $\sigma_{\Pi} = \sqrt{w'\Sigma w}$ for $m$ = 4.5%.</strong><a class="anchor-link" href="#Q:-Compute-allocations-$w%E2%88%97$-and-portfolio-risk-$%5Csigma_%7B%5CPi%7D-=-%5Csqrt%7Bw'%5CSigma-w%7D$-for-$m$-=-4.5%25.">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7762,8 +7778,7 @@ Verification passed: Portfolio weights sum to 1.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Question 1.2. Instead of computing other optimal allocations by formula, let’s conduct an experiment.</strong></p>
-<ul>
+<h2 id="Question-1.2.-Instead-of-computing-other-optimal-allocations-by-formula,-let%E2%80%99s-conduct-an-experiment."><strong>Question 1.2. Instead of computing other optimal allocations by formula, let’s conduct an experiment.</strong><a class="anchor-link" href="#Question-1.2.-Instead-of-computing-other-optimal-allocations-by-formula,-let%E2%80%99s-conduct-an-experiment.">¶</a></h2><ul>
 <li><p>Generate above 700 random allocation sets: 4 × 1 vectors. Each set has to satisfy the constraint $w′1 = 1$. In fact, once you generate three random numbers $w_1, w_2, w_3$   , the 4th can be computed.</p>
 </li>
 <li><p>Weights will not be optimal and can be negative.</p>
@@ -7775,7 +7790,6 @@ Verification passed: Portfolio weights sum to 1.
 <li><p>Identify the shape and explain this plot.</p>
 </li>
 </ul>
-<p><strong>A:</strong></p>
 </div>
 </div>
 </div>
