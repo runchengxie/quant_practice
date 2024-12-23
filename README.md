@@ -1,3 +1,3 @@
-# cqf
+# quant practice questions
 
- cqf project
+ practice project
